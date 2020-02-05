@@ -3,11 +3,17 @@ $input = $_GET[ "nameofthePoke"];
 $content = file_get_contents('https://pokeapi.co/api/v2/pokemon/'. $input);
 
 $data = json_decode($content,true);
-echo $data["name"];
+$pokpix= $data['sprites']['front_default'];
+echo "<img src='{$pokpix}'";
+
+
+
+
+//.input in making the input box to work, type any pokemon family
+// to display the image i declare a variable $pokipix---['sprite']----
+
 ?>
 
-// add in input and when i type a name it search
-// by using .$input
 
 
 
