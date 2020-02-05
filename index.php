@@ -6,11 +6,29 @@ $data = json_decode($content,true);
 $pokpix= $data['sprites']['front_default'];
 echo "<img src='{$pokpix}'";
 
+$pokev = $data['moves'][1]['move']['name'];
+var_dump($pokev);
 
+/*$randomMoves = [];
 
+$lenghtARR = data ['moves'].lenght -1;
+for (let i=0; i<data['moves'].lenght; i++){
+    random.push(data['moves'][randomNumber(lenghtARR)]['move']['name']);
+}
+       $ filteredMoves = randomMoves.filter((item, index) => {
+                return randomMoves.indexOf(item) === index;
+            });
+            for (let j = 1; j < 5; j++) {
+                $content = get_file_content
+            //document.getElementById("move" + j + "").innerHTML = filteredMoves[j];
+            }
+
+        })
+});*/
 
 //.input in making the input box to work, type any pokemon family
 // to display the image i declare a variable $pokipix---['sprite']----
+//var-pokev for the moves
 
 ?>
 
