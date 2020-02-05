@@ -6,8 +6,14 @@ $data = json_decode($content,true);
 $pokpix= $data['sprites']['front_default'];
 echo "<img src='{$pokpix}'";
 
-$pokev = $data['moves'][1]['move']['name'];
-var_dump($pokev);
+//$pokev = $data['moves'][1]['move']['name'];
+//var_dump($pokev);
+
+
+for ($x  = 0; $x <= 4; $x++) {
+    echo "The move is: " . $data['moves'][$x]['move']['name'] ."<br>";
+}
+
 
 /*$randomMoves = [];
 
@@ -29,6 +35,7 @@ for (let i=0; i<data['moves'].lenght; i++){
 //.input in making the input box to work, type any pokemon family
 // to display the image i declare a variable $pokipix---['sprite']----
 //var-pokev for the moves
+// pok movement in loop 
 
 ?>
 
