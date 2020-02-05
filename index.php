@@ -1,11 +1,17 @@
 <?php
+$input = $_GET[ "nameofthePoke"];
+$content = file_get_contents('https://pokeapi.co/api/v2/pokemon/'. $input);
 
-
-$content = file_get_contents('https://pokeapi.co/api/v2/pokemon/eevee');
 $data = json_decode($content,true);
-echo $data["name"]
-
+echo $data["name"];
 ?>
+
+// add in input and when i type a name it search
+// by using .$input
+
+
+
+
 
 
 
@@ -16,5 +22,12 @@ echo $data["name"]
     <title>Document</title>
 </head>
 <body>
+<form method="get">
+    <p>Name:<br></p>
+<input type="text" name="nameofthePoke" value="">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+
 </body>
 </html>
