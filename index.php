@@ -4,40 +4,45 @@ $content = file_get_contents('https://pokeapi.co/api/v2/pokemon/'. $input);
 
 $data = json_decode($content,true);
 $pokpix= $data['sprites']['front_default'];
-echo "<img src='{$pokpix}'";
+
 
 //$pokev = $data['moves'][1]['move']['name'];
 //var_dump($pokev);
 
 
-for ($x  = 0; $x <= 4; $x++) {
-    echo "The move is: " . $data['moves'][$x]['move']['name'] ."<br>";
-}
+
+$input = $_GET[ "nameofthePoke"];
+$content1 = file_get_contents('https://pokeapi.co/api/v2/pokemon-species/'.$input);
+$data1 = json_decode($content1, true);
+
+$pokVic= $data1['evolves_from_species']['name'];
+$content = file_get_contents('https://pokeapi.co/api/v2/pokemon/'. $pokVic);
+$data2 = json_decode($content,true);
+$pokbaby= $data2['sprites']['front_default'];
 
 
-/*$randomMoves = [];
+//$getPokemon
+//$getEvolution
+//$getpokeName
 
-$lenghtARR = data ['moves'].lenght -1;
-for (let i=0; i<data['moves'].lenght; i++){
-    random.push(data['moves'][randomNumber(lenghtARR)]['move']['name']);
-}
-       $ filteredMoves = randomMoves.filter((item, index) => {
-                return randomMoves.indexOf(item) === index;
-            });
-            for (let j = 1; j < 5; j++) {
-                $content = get_file_content
-            //document.getElementById("move" + j + "").innerHTML = filteredMoves[j];
-            }
-
-        })
-});*/
 
 //.input in making the input box to work, type any pokemon family
 // to display the image i declare a variable $pokipix---['sprite']----
 //var-pokev for the moves
-// pok movement in loop 
+// pok movement in loop
+// evolution d api with /species and makinga variable $pokbaby
 
 ?>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -50,6 +55,7 @@ for (let i=0; i<data['moves'].lenght; i++){
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>
@@ -59,6 +65,13 @@ for (let i=0; i<data['moves'].lenght; i++){
 <br><br>
 <input type="submit" value="Submit">
 </form>
+<img src="<?php echo $pokpix ?>">
+     <p> <?php  for ($x  = 0; $x < 4; $x++) {
+     echo "The move is: " . $data['moves'][$x]['move']['name'] ."<br>";
+}
+                                ?>           </p>
+<P>    baby: <?php echo $pokVic ?> </P>
+<img src = "<?php echo $pokbaby?>"
 
 </body>
 </html>
