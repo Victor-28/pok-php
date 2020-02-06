@@ -20,12 +20,6 @@ $content = file_get_contents('https://pokeapi.co/api/v2/pokemon/'. $pokVic);
 $data2 = json_decode($content,true);
 $pokbaby= $data2['sprites']['front_default'];
 
-
-//$getPokemon
-//$getEvolution
-//$getpokeName
-
-
 //.input in making the input box to work, type any pokemon family
 // to display the image i declare a variable $pokipix---['sprite']----
 //var-pokev for the moves
@@ -55,8 +49,8 @@ $pokbaby= $data2['sprites']['front_default'];
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-    <title>Document</title>
+    <title>Pokedex</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <form method="get">
@@ -72,6 +66,7 @@ $pokbaby= $data2['sprites']['front_default'];
                                 ?>           </p>
 <P>    baby: <?php echo $pokVic ?> </P>
 <img src = "<?php echo $pokbaby?>"
+
 
 </body>
 </html>
